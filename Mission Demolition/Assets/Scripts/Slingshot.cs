@@ -58,8 +58,10 @@ public class Slingshot : MonoBehaviour
             projectileRigidbody.isKinematic = false; //Move due to vecloty and gravity again
             projectileRigidbody.velocity = -mouseDelta * velcoityMul; //the projectile is given a velocity that is propotional to the distance that its launched from,
             // its negative becase we want it to fly in the opposite direction from where its clicked, giving it the illusion that its being pulled back and fired much like a noraml slingshot.
+            FollowCam.POI = projectile; //ensures the camera follows the projectile
             projectile = null; //doesn't delete the gameObject but allows us to fill it again with another projectile instance.
         }
+
 
     }
     private void OnMouseEnter()
