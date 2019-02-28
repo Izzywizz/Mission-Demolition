@@ -47,7 +47,7 @@ public class Slingshot : MonoBehaviour
             print(mouseDelta);
         }
 
-        //Move the projectile to this new position, however limited to a speic radius (see above)
+        //Move the projectile to this new position, however limited to a specific radius (see above)
         Vector3 projectilePos = launchPos + mouseDelta;
         projectile.transform.position = projectilePos;
 
