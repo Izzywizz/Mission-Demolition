@@ -412,6 +412,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47dbf119a2a0949609476388b5229222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numClouds: 40
+  cloudPrefab: {fileID: 8898659515957028526, guid: 726ed10929686403582ff9a1cca729ec,
+    type: 3}
+  cloudPosMin: {x: -50, y: -5, z: 10}
+  cloudPosMax: {x: 150, y: 100, z: 10}
+  cloudScaleMin: 1
+  cloudScaleMax: 3
+  cloudSpeedMul: 0.5
 --- !u!1 &1040915048
 GameObject:
   m_ObjectHideFlags: 0

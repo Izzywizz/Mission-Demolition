@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CloudCrafter : MonoBehaviour
 {
-    [Header("SEt in Inspector")]
+    [Header("Set in Inspector")]
     public int numClouds = 40; // the number of clouds to make
     public GameObject cloudPrefab; // the prefab for the clouds
     public Vector3 cloudPosMin = new Vector3(-50, -5, 10);
