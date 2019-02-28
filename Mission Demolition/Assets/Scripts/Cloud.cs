@@ -47,8 +47,8 @@ public class Cloud : MonoBehaviour
             scale.z = Random.Range(sphereScaleRangeZ.x, sphereScaleRangeZ.y);
 
             //adjust y scale by x distance from core
-            print("Offset X: " + offset.x);
-            print("Sphere Offset X: " + sphereOffsetScale.x);
+            //print("Offset X: " + offset.x);
+            //print("Sphere Offset X: " + sphereOffsetScale.x);
             scale.y *= 1 - (Mathf.Abs(offset.x) / sphereOffsetScale.x); //y scale is changed based on how far it is from the centre, the further out X is, the smaller the y scale 
             scale.y = Mathf.Max(scale.y, scaleYMin);
             sphereTrans.localScale = scale; //scale is always relative to the parents transform

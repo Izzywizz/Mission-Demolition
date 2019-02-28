@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Slingshot : MonoBehaviour
 {
+    static private Slingshot S; //a private singleton (only accessible from within this classs)
     // fields set in the Unity Inspector pane, this is known as a compiler attribute
     [Header("Set in Inspector")]
     public GameObject prefabProjectile;
@@ -19,6 +20,7 @@ public class Slingshot : MonoBehaviour
 
     private void Awake()
     {
+        S = this;
         //Find the Child transform attached to the parent Sligshot and return its tranform to intiall deactive the slingshot highlight
         Transform launchPointTrans = transform.Find("LaunchPoint");
         launchPoint = launchPointTrans.gameObject;
@@ -44,7 +46,6 @@ public class Slingshot : MonoBehaviour
         {
             mouseDelta.Normalize(); //this essentially sets the vector length to 1 (it keeps it direction)
             mouseDelta *= maxMagnitude; //then we multiply by the MaxMagnitude (which is set to 3m in the Sphere collider componet) (1 * 3)
-            print(mouseDelta);
         }
 
         //Move the projectile to this new position, however limited to a specific radius (see above)
@@ -90,6 +91,22 @@ public class Slingshot : MonoBehaviour
         projectile.transform.position = launchPos;
         // set it to is isKinematic for now
         projectileRigidbody = projectile.GetComponent<Rigidbody>();
+        //projectileRigidbody.collisionDetectionMode = CollisionDetectionMode.Discrete; //prevents runtime warning
         projectileRigidbody.isKinematic = true;
+
+    }
+
+    /// <summary>
+    /// This static publicproperty uses the static private Slingshot instance S to allow publuc acces to read teh value of the slingshots launchPos.
+    /// If somehow S is null then it returns [0,0,0]
+    /// </summary>
+    /// <value>The launch position.</value>
+    static public Vector3 LAUNCH_POS
+    {
+        get
+        {
+            if (S == null) return Vector3.zero;
+            return S.launchPos;
+        }
     }
 }
