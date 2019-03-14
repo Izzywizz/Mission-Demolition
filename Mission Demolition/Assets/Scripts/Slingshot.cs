@@ -61,6 +61,9 @@ public class Slingshot : MonoBehaviour
             // its negative becase we want it to fly in the opposite direction from where its clicked, giving it the illusion that its being pulled back and fired much like a noraml slingshot.
             FollowCam.POI = projectile; //ensures the camera follows the projectile
             projectile = null; //doesn't delete the gameObject but allows us to fill it again with another projectile instance.
+
+            MissionDemolition.ShotFired(); //updated the shots fire UI TExt
+            ProjectileLine.S.poi = projectile; //follow the new projectile's line, rmemebr a new instance of the projectile is created
         }
 
 
