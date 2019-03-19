@@ -481,12 +481,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 534669902}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 534669908}
+        m_MethodName: SwitchView
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -663,11 +663,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78696ad251b4741fcbf019d698b553ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uitLevel: {fileID: 0}
-  uitShots: {fileID: 0}
-  uitButton: {fileID: 0}
-  castlePos: {x: 0, y: 0, z: 0}
-  castles: []
+  uitLevel: {fileID: 1299932527}
+  uitShots: {fileID: 1828458330}
+  uitButton: {fileID: 674611621}
+  castlePos: {x: 50, y: -9.5, z: 0}
+  castles:
+  - {fileID: 8604243397584289677, guid: 9a862238bb7fa40138d6b4d9442f5aa6, type: 3}
+  - {fileID: 8604243397584289677, guid: f6bdc9f5386354195bd87972528e03e2, type: 3}
+  - {fileID: 8604243397584289677, guid: 4d52d07df57234a028c4a6f32c4799cd, type: 3}
+  - {fileID: 8604243397584289677, guid: c3d57f99ac09e4fef8f85fc067d14632, type: 3}
   level: 0
   levelMax: 0
   shotsTaken: 0
